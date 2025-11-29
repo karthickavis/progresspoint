@@ -70,8 +70,11 @@ const TaskForm = ({ editTask, setEditTask }) => {
       <div className="flex flex-col">
         <label className="font-medium mb-1">Deadline</label>
         <input
-          type="date"
+          type="text"
+          placeholder="Deadline Date"
           value={deadline}
+            onFocus={(e) => (e.target.type = "date")}
+    onBlur={(e) => !e.target.value && (e.target.type = "text")}
           onChange={(e) => setDeadline(e.target.value)}
           className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
